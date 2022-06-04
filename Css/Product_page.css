@@ -1,0 +1,33 @@
+:root {
+  --primary-color: #313262;
+}
+.navbar-main {
+  background-color: var(--primary-color);
+}
+#navbar-components {
+  list-style-type: none;
+}
+#navbar-components a {
+  text-decoration: none;
+  font-family: "Big Shoulders Text", cursive;
+  font-weight: 900;
+  font-size: 1.5em;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+.nav-item {
+    padding: 0px 20px 0px 0px;
+  }
+@media screen and (min-device-width: 992px) and (max-device-width: 1399px) {
+
+
+    .company-name{
+      font-size: 1.5rem;
+    }
+    #navbar-components a {
+      font-size: 1em;
+    }
+    .nav-item {
+      padding: 0px 20px 0px 0px;
+    }
+  }
