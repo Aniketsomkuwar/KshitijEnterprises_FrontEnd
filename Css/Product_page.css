@@ -193,10 +193,10 @@ body {
     }
   }
 
-
+  
 
 .card-img img{
-  width:70%;
-
-
+  width: 450px; /* You can set the dimensions to whatever you want */
+  height: 350px;
+  object-fit: contain;
 }

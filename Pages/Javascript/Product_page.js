@@ -16,7 +16,8 @@ function AddProductsToTable(id, name, image, Category, price, quantity, product_
     var productDiv = document.createElement('div');
     var productCard = document.createElement('div');
     var productCardBody = document.createElement('div');
-    productDiv.classList.add("col-sm-3");
+    productDiv.classList.add("col-sm-4");
+    productDiv.classList.add("col-md-3");
     productDiv.classList.add("pt-3");
 
 
@@ -26,14 +27,14 @@ function AddProductsToTable(id, name, image, Category, price, quantity, product_
 
 
     // productDiv.innerHTML = ' <div class="card">';
-    productCard.innerHTML += '<div class="card-img text-center"><img  src=" ' + image + ' " alt=""  ></div>';
+    productCard.innerHTML += '<div class="card-img text-center"><img class="img-fluid"  src=" ' + image + ' " alt=""  ></div>';
 
     productCard.appendChild(productCardBody);
 
-    productCardBody.innerHTML += '<h5 class="card-title">' + name + '</h5>';
+    productCardBody.innerHTML += '<h4 class="card-title fw-bold">' + name + '</h4>';
     productCardBody.innerHTML += '<h6 class="card-category">' + Category + '</h6>'
     productCardBody.innerHTML += '<p class="">Price: <span class="card-price">' + price + '</span></p>'
-    productCardBody.innerHTML += '<div class="d-grid gap-2"> <button class="btn btn-dark">More Info</button> </div> '
+    productCardBody.innerHTML += '<div class="d-grid gap-2"> <button class="btn btn-outline-dark" onclick="FillBoxes(' + id + ')">More Info</button> </div> '
 
     productDiv.appendChild(productCard);
     cardrow.appendChild(productDiv);
@@ -43,10 +44,7 @@ function AddProductsToTable(id, name, image, Category, price, quantity, product_
     // td6.classList += "ByQuantity";
 
 
-    // var ControlDiv = document.createElement('td');
-    // ControlDiv.innerHTML = '<button type="button" class="mt-4 btn btn-light" data-bs-toggle="modal" data-bs-target="#EditModal" onclick="FillBoxes(' + id + ')">Edit Product</button>'
-    // trow.appendChild(ControlDiv);
-    // tbody.appendChild(trow);
+   
     productList.push([id, name, image, Category, price, quantity, product_info]);
 
 }
@@ -60,13 +58,15 @@ let num = 0;
 const FillBoxes = (data) => {
     for (let key in productList) {
         if (productList[key][0] == data) {
-            IdMod.value = productList[key][0];
-            NameMod.value = productList[key][1];
-            ImageMod.value = productList[key][2];
-            CategoryMod.value = productList[key][3];
-            PriceMod.value = productList[key][4];
-            QuantityMod.value = productList[key][5];
-            InfoMod.value = productList[key][6];
+                console.log(data) 
+                console.log(productList[key]);    
+            // IdMod.value = productList[key][0];
+            // NameMod.value = productList[key][1];
+            // ImageMod.value = productList[key][2];
+            // CategoryMod.value = productList[key][3];
+            // PriceMod.value = productList[key][4];
+            // QuantityMod.value = productList[key][5];
+            // InfoMod.value = productList[key][6];
         }
     }
 }
